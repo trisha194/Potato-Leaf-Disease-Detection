@@ -48,7 +48,7 @@ page = st.sidebar.radio("Choose a page", ["Home", "Detect Disease"])
 st.image("Diseases.png", use_container_width=True)
 
 if page == "Home":
-    st.markdown("<h1 style='text-align: center;'>Plant Disease Detection System</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center;'>Potato Leaf Disease Detection System🥔🥬</h1>", unsafe_allow_html=True)
     st.write("This tool helps in identifying plant diseases using deep learning models.")
 
 elif page == "Detect Disease":
