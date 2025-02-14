@@ -3,8 +3,12 @@ import tensorflow as tf
 import numpy as np
 from PIL import Image
 
+
+url = "https://drive.google.com/file/d/1pxLcxwRYhyqLVLcG2ShyQ09pgRsUbCTy/view?usp=sharing"  # Replace YOUR_FILE_ID
+gdown.download(url, model_path, quiet=False)
+
 def classify_disease(image_path):
-    model = tf.keras.models.load_model("potato_disease_model.h5")
+    model = tf.keras.models.load_model(url)
     img = tf.keras.preprocessing.image.load_img(image_path, target_size=(128, 128))
     img_array = tf.keras.preprocessing.image.img_to_array(img)
     img_array = np.expand_dims(img_array, axis=0) / 255.0
