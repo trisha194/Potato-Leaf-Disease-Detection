@@ -40,7 +40,7 @@ def classify_disease(image):
     return np.argmax(output_data)
 
 # Streamlit App UI
-st.set_page_config(page_title="Plant Disease Detection", layout="wide")
+st.set_page_config(page_title="Potato Leaf Disease Detection🥔🥬", layout="wide")
 st.sidebar.header("Navigation")
 page = st.sidebar.radio("Choose a page", ["Home", "Detect Disease"])
 
