@@ -2,10 +2,17 @@ import streamlit as st
 import tensorflow as tf
 import numpy as np
 from PIL import Image
+import os
+import gdown
 
 
-url = "https://drive.google.com/file/d/1pxLcxwRYhyqLVLcG2ShyQ09pgRsUbCTy/view?usp=sharing"  # Replace YOUR_FILE_ID
-gdown.download(url, model_path, quiet=False)
+# Define model path
+model_path = "potato_disease_model.h5"
+
+# Download from Google Drive if not available
+if not os.path.exists(model_path):
+    url = "https://drive.google.com/file/d/1pxLcxwRYhyqLVLcG2ShyQ09pgRsUbCTy/view?usp=sharing"  # Replace YOUR_FILE_ID
+    gdown.download(url, model_path, quiet=False)
 
 def classify_disease(image_path):
     model = tf.keras.models.load_model(url)
